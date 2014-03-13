@@ -25,7 +25,7 @@
 #import "NSArray-SMMExtensions.h"
 #import "NSString-SMMExtensions.h"
 
-
+#pragma mark - Interface
 @interface SMMMonitorWindowController (Private)
 
 - (void)displayPreferencesDidChange:(NSNotification *)notification;
@@ -48,7 +48,7 @@
 
 @end
 
-
+#pragma mark - Implementation
 @implementation SMMMonitorWindowController
 
 static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
@@ -172,10 +172,7 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
     }
 }
 
-//
-// Actions
-//
-
+#pragma mark - Actions
 - (IBAction)clearMessages:(id)sender;
 {
     [[self document] clearSavedMessages];
@@ -256,6 +253,14 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
     [[self document] setAreSourcesShown:!isShown];
 }
 
+-(IBAction)toogleVisualiserShown:(id)sender
+{
+	BOOL isShown;
+	[sender setIntValue:![sender intValue]];
+	isShown = [[self document] isVisualiserShown];
+	[[self document] setIsVisualiserShown:!isShown];
+}
+
 - (IBAction)showDetailsOfSelectedMessages:(id)sender;
 {
     NSEnumerator *enumerator;
@@ -294,10 +299,8 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
     }
 }
 
-//
-// Other API
-//
 
+#pragma mark - Interface APIs
 - (void)synchronizeInterface;
 {
     [self synchronizeMessagesWithScrollToBottom:NO];
@@ -309,6 +312,8 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
     [self synchronizeMaxMessageCount];
     [self synchronizeFilterControls];
     [self synchronizeFilterShown];
+	[self synchronizeVisualiser];
+	[self synchronizeVisualiserShown];
 }
 
 - (void)synchronizeMessagesWithScrollToBottom:(BOOL)shouldScrollToBottom
@@ -344,7 +349,6 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
         [groupedInputSources release];
         groupedInputSources = [newGroupedInputSources retain];
     }
-
     [sourcesOutlineView reloadData];
 }
 
@@ -417,6 +421,16 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
 - (void)synchronizeFilterShown;
 {
     [self synchronizeDisclosableView:filterDisclosableView button:filterDisclosureButton withIsShown:[[self document] isFilterShown]];
+}
+
+- (void)synchronizeVisualiser;
+{
+	
+}
+
+- (void)synchronizeVisualiserShown;
+{
+	[self synchronizeDisclosableView:visualiserDisclosableView button:visualiserDisclosureButton withIsShown:[[self document] isVisualiserShown]];
 }
 
 - (void)couldNotFindSourcesNamed:(NSArray *)sourceNames;

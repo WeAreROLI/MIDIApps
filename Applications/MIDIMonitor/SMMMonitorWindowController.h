@@ -19,6 +19,10 @@
 
 @interface SMMMonitorWindowController : NSWindowController <NSTableViewDataSource>
 {
+	// Visualiser controls
+	IBOutlet SNDisclosureButton *visualiserDisclosureButton;
+	IBOutlet SNDisclosableView *visualiserDisclosableView;
+	
     // Sources controls
     IBOutlet SNDisclosureButton *sourcesDisclosureButton;
     IBOutlet SNDisclosableView *sourcesDisclosableView;
@@ -69,6 +73,8 @@
 - (IBAction)setChannel:(id)sender;
 - (IBAction)toggleSourcesShown:(id)sender;
 - (IBAction)toggleFilterShown:(id)sender;
+- (IBAction)toogleVisualiserShown:(id)sender;
+
 - (IBAction)showDetailsOfSelectedMessages:(id)sender;
 - (IBAction)copy:(id)sender;
 
@@ -83,6 +89,8 @@
 - (void)synchronizeMaxMessageCount;
 - (void)synchronizeFilterControls;
 - (void)synchronizeFilterShown;
+- (void)synchronizeVisualiser;
+- (void)synchronizeVisualiserShown;
 
 - (void)couldNotFindSourcesNamed:(NSArray *)sourceNames;
 

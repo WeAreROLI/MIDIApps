@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16133B7415F5C75C00533536 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 161B71EF15D8D76B006E21D4 /* Sparkle.framework */; };
-		161B71F815D8D79E006E21D4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161B71EF15D8D76B006E21D4 /* Sparkle.framework */; };
 		161B71FA15D8DD83006E21D4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 161B71F915D8DD83006E21D4 /* dsa_pub.pem */; };
 		162972B1097B414800158D7B /* SnoizeMIDI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 169E71A7097B2419001AFB58 /* SnoizeMIDI.framework */; };
 		162972B2097B414C00158D7B /* SnoizeMIDISpy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 169E71B1097B242A001AFB58 /* SnoizeMIDISpy.framework */; };
@@ -47,6 +45,9 @@
 		16C267D915D836C6009F4BE4 /* SNDisclosureButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C267D715D836C6009F4BE4 /* SNDisclosureButton.m */; };
 		16E8F01A097B2E5200B52193 /* SnoizeMIDISpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169E71B1097B242A001AFB58 /* SnoizeMIDISpy.framework */; };
 		16E8F01D097B2E8B00B52193 /* SnoizeMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169E71A7097B2419001AFB58 /* SnoizeMIDI.framework */; };
+		A89953D118D0A2FE007B612A /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89953D018D0A2FE007B612A /* Sparkle.framework */; };
+		A89953D518D0A37E007B612A /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A89953D018D0A2FE007B612A /* Sparkle.framework */; };
+		A8DB0F3618D2053C003241DA /* ROVisualiserWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DB0F3518D2053C003241DA /* ROVisualiserWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,9 +144,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				16133B7415F5C75C00533536 /* Sparkle.framework in CopyFiles */,
 				162972B1097B414800158D7B /* SnoizeMIDI.framework in CopyFiles */,
 				162972B2097B414C00158D7B /* SnoizeMIDISpy.framework in CopyFiles */,
+				A89953D518D0A37E007B612A /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +191,9 @@
 		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		A89953D018D0A2FE007B612A /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		A8DB0F3418D2053C003241DA /* ROVisualiserWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROVisualiserWindowController.h; sourceTree = "<group>"; };
+		A8DB0F3518D2053C003241DA /* ROVisualiserWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ROVisualiserWindowController.m; sourceTree = "<group>"; };
 		F53A1C06015EB24301000164 /* SMMPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMPreferencesWindowController.h; sourceTree = "<group>"; };
 		F53A1C07015EB24301000164 /* SMMPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMPreferencesWindowController.m; sourceTree = "<group>"; };
 		F53A1C0B015EC0FB01000164 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Preferences.nib; sourceTree = "<group>"; };
@@ -231,7 +235,7 @@
 				167B883B06ED4D650053D305 /* CoreMIDI.framework in Frameworks */,
 				16E8F01D097B2E8B00B52193 /* SnoizeMIDI.framework in Frameworks */,
 				16E8F01A097B2E5200B52193 /* SnoizeMIDISpy.framework in Frameworks */,
-				161B71F815D8D79E006E21D4 /* Sparkle.framework in Frameworks */,
+				A89953D118D0A2FE007B612A /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +245,7 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A89953D018D0A2FE007B612A /* Sparkle.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 				F5B4281801A360AD01000164 /* CoreMIDI.framework */,
 				162310440E6CCC6100A700CA /* SnoizeMIDI.framework */,
@@ -362,6 +367,8 @@
 				16C267D515D836C6009F4BE4 /* SNDisclosableView.m */,
 				16C267D615D836C6009F4BE4 /* SNDisclosureButton.h */,
 				16C267D715D836C6009F4BE4 /* SNDisclosureButton.m */,
+				A8DB0F3418D2053C003241DA /* ROVisualiserWindowController.h */,
+				A8DB0F3518D2053C003241DA /* ROVisualiserWindowController.m */,
 				F571C56C01903F3301000164 /* Cocoa Extensions */,
 				F57F62950261E14501000164 /* SnoizeMIDI Extensions */,
 			);
@@ -634,6 +641,7 @@
 				167B882B06ED4D650053D305 /* SMMPreferencesWindowController.m in Sources */,
 				167B882C06ED4D650053D305 /* SMMSysExWindowController.m in Sources */,
 				167B882D06ED4D650053D305 /* SMMSpyingInputStream.m in Sources */,
+				A8DB0F3618D2053C003241DA /* ROVisualiserWindowController.m in Sources */,
 				167B882E06ED4D650053D305 /* SMMCombinationInputStream.m in Sources */,
 				167B882F06ED4D650053D305 /* SMMSourcesOutlineView.m in Sources */,
 				167B883006ED4D650053D305 /* SMMNonHighlightingCells.m in Sources */,
@@ -743,6 +751,10 @@
 			baseConfigurationReference = 169E7171097B2203001AFB58 /* Snoize-Application-Release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/rolimidi/dev/roli/MIDIApps/Applications/MIDIMonitor,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PrecompHeader.h;
 				INFOPLIST_FILE = "Info-MIDIMonitor.plist";
@@ -764,6 +776,10 @@
 			baseConfigurationReference = 169E716F097B2203001AFB58 /* Snoize-Application-Debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/rolimidi/dev/roli/MIDIApps/Applications/MIDIMonitor,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PrecompHeader.h;
 				INFOPLIST_FILE = "Info-MIDIMonitor.plist";

@@ -238,12 +238,11 @@ NSString *SMMOpenWindowsForNewSourcesPreferenceKey = @"SMMOpenWindowsForNewSourc
 
 - (void)sourceEndpointsAppeared:(NSNotification *)notification;
 {
+
     if ([[NSUserDefaults standardUserDefaults] boolForKey:SMMOpenWindowsForNewSourcesPreferenceKey])
     {
-        NSArray *endpoints;
-
-        endpoints = [[notification userInfo] objectForKey:SMMIDIObjectsThatAppeared];
-
+		NSArray *endpoints;
+		endpoints = [[notification userInfo] objectForKey:SMMIDIObjectsThatAppeared];
         if (!newSources) {
             newSources = [[NSMutableSet alloc] init];
             [self performSelector:@selector(openWindowForNewSources) withObject: nil afterDelay:0.1 inModes:[NSArray arrayWithObject:NSDefaultRunLoopMode]];

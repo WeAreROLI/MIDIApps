@@ -26,6 +26,7 @@
     // Other settings
     BOOL areSourcesShown;
     BOOL isFilterShown;
+	BOOL isVisualiserShown;
     NSString *windowFrameDescription;
     NSPoint messagesScrollPoint;
 
@@ -57,6 +58,9 @@
 
 - (BOOL)isFilterShown;
 - (void)setIsFilterShown:(BOOL)newValue;
+
+- (BOOL)isVisualiserShown;
+- (void)setIsVisualiserShown:(BOOL)newValue;
 
 - (NSString *)windowFrameDescription;
 - (void)setWindowFrameDescription:(NSString *)value;

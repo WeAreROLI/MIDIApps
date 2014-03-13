@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16133B7515F5C78100533536 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 161B720815D8E97D006E21D4 /* Sparkle.framework */; };
-		161B721115D8E9BC006E21D4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161B720815D8E97D006E21D4 /* Sparkle.framework */; };
 		161B721315D8EA13006E21D4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 161B721215D8EA13006E21D4 /* dsa_pub.pem */; };
 		161B721615D8EA7F006E21D4 /* SysExLibrarian.xml in Resources */ = {isa = PBXBuildFile; fileRef = 161B721515D8EA7F006E21D4 /* SysExLibrarian.xml */; };
 		163E35AB09E9EFA600138102 /* NSFileManager-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 163E35A909E9EFA600138102 /* NSFileManager-Extensions.m */; };
@@ -71,6 +69,8 @@
 		16F034250984BA49006C8A44 /* SnoizeMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F0332F0984B74B006C8A44 /* SnoizeMIDI.framework */; };
 		16F034320984BABA006C8A44 /* SnoizeMIDI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 16F0332F0984B74B006C8A44 /* SnoizeMIDI.framework */; };
 		16F0384C0984C9D7006C8A44 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16F0384B0984C9D7006C8A44 /* Defaults.plist */; };
+		A89953D718D0BD09007B612A /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89953D618D0BD08007B612A /* Sparkle.framework */; };
+		A89953DA18D0BD19007B612A /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A89953D618D0BD08007B612A /* Sparkle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,8 +146,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				16133B7515F5C78100533536 /* Sparkle.framework in CopyFiles */,
 				16F034320984BABA006C8A44 /* SnoizeMIDI.framework in CopyFiles */,
+				A89953DA18D0BD19007B612A /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +182,7 @@
 		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		A89953D618D0BD08007B612A /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		F5308FE40232E1AB01000164 /* SSERecordOneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSERecordOneController.h; sourceTree = "<group>"; };
 		F5308FE50232E1AB01000164 /* SSERecordOneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSERecordOneController.m; sourceTree = "<group>"; };
 		F5308FE90232F9D401000164 /* RecordOne.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = RecordOne.nib; path = English.lproj/RecordOne.nib; sourceTree = "<group>"; };
@@ -268,7 +269,7 @@
 				16F0338B0984B76F006C8A44 /* CoreMIDI.framework in Frameworks */,
 				16F0338D0984B76F006C8A44 /* Carbon.framework in Frameworks */,
 				16F034250984BA49006C8A44 /* SnoizeMIDI.framework in Frameworks */,
-				161B721115D8E9BC006E21D4 /* Sparkle.framework in Frameworks */,
+				A89953D718D0BD09007B612A /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +279,7 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A89953D618D0BD08007B612A /* Sparkle.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 				F539E386020F2C2F01000164 /* Carbon.framework */,
 				F559F8FA01DEC0C601000164 /* CoreMIDI.framework */,
@@ -960,7 +962,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/MIDIApps-ebblttgvuqergyalshlldsfqjcnw/Build/Products/Debug\"",
+					"\\\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/MIDIApps-ebblttgvuqergyalshlldsfqjcnw/Build/Products/Debug\\\"",
+					/Users/rolimidi/dev/roli/MIDIApps/Applications/SysExLibrarian,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PrecompHeader.h;
@@ -978,7 +981,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/MIDIApps-ebblttgvuqergyalshlldsfqjcnw/Build/Products/Debug\"",
+					"\\\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/MIDIApps-ebblttgvuqergyalshlldsfqjcnw/Build/Products/Debug\\\"",
+					/Users/rolimidi/dev/roli/MIDIApps/Applications/SysExLibrarian,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PrecompHeader.h;

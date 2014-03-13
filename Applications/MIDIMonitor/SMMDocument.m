@@ -19,7 +19,7 @@
 #import "SMMCombinationInputStream.h"
 #import "SMMMonitorWindowController.h"
 
-
+#pragma mark  - Interface
 @interface SMMDocument (Private)
 
 - (void)sourceListDidChange:(NSNotification *)notification;
@@ -39,7 +39,7 @@
 
 @end
 
-
+#pragma mark - Implementation
 @implementation SMMDocument
 
 NSString *SMMAutoSelectFirstSourceInNewDocumentPreferenceKey = @"SMMAutoSelectFirstSource";
@@ -134,6 +134,7 @@ NSString *SMMAskBeforeClosingModifiedWindowPreferenceKey = @"SMMAskBeforeClosing
     }
 }
 
+#pragma mark - data Representation
 - (NSData *)dataRepresentationOfType:(NSString *)type;
 {
     NSMutableDictionary *dict;
@@ -308,9 +309,7 @@ NSString *SMMAskBeforeClosingModifiedWindowPreferenceKey = @"SMMAskBeforeClosing
 }
 
 
-//
-// API for SMMMonitorWindowController
-//
+#pragma mark - API for SMMMonitorWindowController
 
 - (NSArray *)groupedInputSources
 {
@@ -444,6 +443,20 @@ NSString *SMMAskBeforeClosingModifiedWindowPreferenceKey = @"SMMAskBeforeClosing
     [[self windowControllers] makeObjectsPerformSelector:@selector(synchronizeFilterShown)];
 }
 
+- (BOOL)isVisualiserShown;
+{
+	return isVisualiserShown;
+}
+
+- (void)setIsVisualiserShown:(BOOL)newValue;
+{
+	if(newValue == isVisualiserShown)
+		return;
+	
+	isVisualiserShown = newValue;
+	[[self windowControllers] makeObjectsPerformSelector:@selector(synchronizeVisualiserShown)];
+}
+
 - (NSString *)windowFrameDescription;
 {
     return windowFrameDescription;
@@ -541,12 +554,22 @@ NSString *SMMAskBeforeClosingModifiedWindowPreferenceKey = @"SMMAskBeforeClosing
     groupedInputSources = [self groupedInputSources];
     sourcesSet = [NSMutableSet set];
     
+	NSArray *sourcesInputs = [[groupedInputSources objectAtIndex:0] objectForKey:@"sources"];
     if ([defaults boolForKey:SMMAutoSelectOrdinarySourcesInNewDocumentPreferenceKey]) {
-        if (groupedInputSources.count > 0 && 
-            (sourcesArray = [[groupedInputSources objectAtIndex:0] objectForKey:@"sources"]))
-            [sourcesSet addObjectsFromArray:sourcesArray];
-    }
-
+        if (groupedInputSources.count > 0 && (sourcesArray = sourcesInputs)) {
+			[sourcesSet addObjectsFromArray:sourcesArray];
+		}
+	} else {
+		// Auto selecting the Seaboard by Default:
+		for(SMSourceEndpoint* endPoint in sourcesInputs) {
+			if([[endPoint longName] isEqualToString:@"Seaboard"]) {
+				NSLog(@"Auto Selecting the Seaboard");
+				[sourcesSet addObject:endPoint];
+				break;
+			}
+		}
+	}
+	
     if ([defaults boolForKey:SMMAutoSelectVirtualDestinationInNewDocumentPreferenceKey]) {
         if (groupedInputSources.count > 1 && 
             (sourcesArray = [[groupedInputSources objectAtIndex:1] objectForKey:@"sources"]))
