@@ -172,25 +172,7 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
     }
 }
 
-#pragma mark - Actions
-- (IBAction)clearMessages:(id)sender;
-{
-    [[self document] clearSavedMessages];
-}
-
-- (IBAction)setMaximumMessageCount:(id)sender;
-{
-    NSNumber *number;
-    unsigned int maxMessageCount;
-    
-    if ((number = [(NSControl*)sender objectValue])) {
-        maxMessageCount = [number unsignedIntValue];
-        [[self document] setMaxMessageCount:maxMessageCount];
-    } else {
-        [self synchronizeMaxMessageCount];
-    }
-}
-
+#pragma mark - Filter Actions
 - (IBAction)changeFilter:(id)sender;
 {
     BOOL turnBitsOn;
@@ -214,7 +196,7 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
 {
     [self changeFilter:[sender selectedCell]];
 }
-
+#pragma mark - Channel Button Actions
 - (IBAction)setChannelRadioButton:(id)sender;
 {
     if ([[sender selectedCell] tag] == 0) {
@@ -229,6 +211,7 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
     [[self document] showOnlyOneChannel:[(NSNumber *)[sender objectValue] unsignedIntValue]];
 }
 
+#pragma mark - Disclosure Button Actions
 - (IBAction)toggleFilterShown:(id)sender;
 {
     BOOL isShown;
@@ -259,6 +242,25 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
 	[sender setIntValue:![sender intValue]];
 	isShown = [[self document] isVisualiserShown];
 	[[self document] setIsVisualiserShown:!isShown];
+}
+
+#pragma mark - MIDI Messages Actions
+- (IBAction)clearMessages:(id)sender;
+{
+    [[self document] clearSavedMessages];
+}
+
+- (IBAction)setMaximumMessageCount:(id)sender;
+{
+    NSNumber *number;
+    unsigned int maxMessageCount;
+    
+    if ((number = [(NSControl*)sender objectValue])) {
+        maxMessageCount = [number unsignedIntValue];
+        [[self document] setMaxMessageCount:maxMessageCount];
+    } else {
+        [self synchronizeMaxMessageCount];
+    }
 }
 
 - (IBAction)showDetailsOfSelectedMessages:(id)sender;
@@ -299,8 +301,7 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
     }
 }
 
-
-#pragma mark - Interface APIs
+#pragma mark - Synchronize Interface
 - (void)synchronizeInterface;
 {
     [self synchronizeMessagesWithScrollToBottom:NO];
@@ -433,6 +434,7 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
 	[self synchronizeDisclosableView:visualiserDisclosableView button:visualiserDisclosureButton withIsShown:[[self document] isVisualiserShown]];
 }
 
+#pragma mark - Helpers
 - (void)couldNotFindSourcesNamed:(NSArray *)sourceNames;
 {
     NSString *title, *message;
@@ -543,13 +545,9 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
 
 @end
 
-
 @implementation SMMMonitorWindowController (NotificationsDelegatesDataSources)
 
-//
-// NSWindow delegate
-//
-
+#pragma mark - NSWindow Delegates
 - (void)windowDidResize:(NSNotification *)notification;
 {
     [self updateDocumentWindowFrameDescription];
@@ -560,11 +558,7 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
     [self updateDocumentWindowFrameDescription];
 }
 
-
-//
-// NSOutlineView data source
-//
-
+#pragma mark - NSOutlineView Data Source Delegates
 - (id)outlineView:(NSOutlineView *)outlineView child:(int)index ofItem:(id)item;
 {
     if (item == nil)
@@ -660,10 +654,7 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
 }
 
 
-//
-// NSTableView data source
-//
-
+#pragma mark - NSTableView Data Source Delegates
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView;
 {
     return [displayedMessages count];
