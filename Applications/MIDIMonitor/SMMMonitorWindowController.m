@@ -301,7 +301,7 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
     }
 }
 
-#pragma mark - Synchronize Interface
+#pragma mark - Synchronize Interfaces
 - (void)synchronizeInterface;
 {
     [self synchronizeMessagesWithScrollToBottom:NO];
@@ -421,17 +421,23 @@ static const NSTimeInterval kMinimumMessagesRefreshDelay = 0.10; // seconds
 
 - (void)synchronizeFilterShown;
 {
-    [self synchronizeDisclosableView:filterDisclosableView button:filterDisclosureButton withIsShown:[[self document] isFilterShown]];
+    [self synchronizeDisclosableView:filterDisclosableView
+							  button:filterDisclosureButton
+						 withIsShown:[[self document] isFilterShown]];
 }
 
 - (void)synchronizeVisualiser;
 {
-	
+	[self synchronizeDisclosableView:visualiserDisclosableView
+							   button:visualiserDisclosureButton
+						  withIsShown:[[self document] isVisualiserShown]];
 }
 
 - (void)synchronizeVisualiserShown;
 {
-	[self synchronizeDisclosableView:visualiserDisclosableView button:visualiserDisclosureButton withIsShown:[[self document] isVisualiserShown]];
+	[self synchronizeDisclosableView:visualiserDisclosableView
+							  button:visualiserDisclosureButton
+						 withIsShown:[[self document] isVisualiserShown]];
 }
 
 #pragma mark - Helpers

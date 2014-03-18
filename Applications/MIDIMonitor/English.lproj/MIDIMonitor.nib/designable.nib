@@ -271,7 +271,7 @@
                             </matrix>
                         </subviews>
                         <connections>
-                            <outlet property="nextKeyView" destination="390" id="485"/>
+                            <outlet property="nextKeyView" destination="x9Z-Sj-bBb" id="6Ni-y6-3gr"/>
                         </connections>
                     </customView>
                     <customView id="369" customClass="SNDisclosableView">
@@ -529,11 +529,14 @@
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
+                        <connections>
+                            <outlet property="nextKeyView" destination="BCY-fm-Ewb" id="6cU-EA-zs3"/>
+                        </connections>
                     </box>
                     <button id="384" customClass="SNDisclosureButton">
                         <rect key="frame" x="20" y="578" width="80" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" title="Filter" bezelStyle="shadowlessSquare" image="855934BD-BD82-437B-92E0-49B285BCDB86" imagePosition="left" alignment="left" alternateImage="3F361E89-3EA4-49E4-9DEB-AC20770AFF9E" state="on" inset="2" id="504">
+                        <buttonCell key="cell" type="square" title="Filter" bezelStyle="shadowlessSquare" image="A7DF67EC-7F3F-45F1-843B-29631615F244" imagePosition="left" alignment="left" alternateImage="1EC2F07A-FFC0-4D56-8AD5-5B364866ED16" state="on" inset="2" id="504">
                             <behavior key="behavior" pushIn="YES" changeContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -545,7 +548,7 @@
                     <button id="447" customClass="SNDisclosureButton">
                         <rect key="frame" x="20" y="708" width="80" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="square" title="Sources" bezelStyle="shadowlessSquare" image="BAAC6E65-3D17-4E79-8921-7B7B51DFCF69" imagePosition="left" alignment="left" alternateImage="DE788009-BE7C-434B-AB1C-26CBC8415BAE" state="on" inset="2" id="505">
+                        <buttonCell key="cell" type="square" title="Sources" bezelStyle="shadowlessSquare" image="35B93B7C-4CDA-4D9B-8507-3BFE5A8E51E8" imagePosition="left" alignment="left" alternateImage="468A7F12-07AC-4234-BC49-A420D9AAAFEA" state="on" inset="2" id="505">
                             <behavior key="behavior" pushIn="YES" changeContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -578,7 +581,7 @@
         </window>
     </objects>
     <resources>
-        <image name="3F361E89-3EA4-49E4-9DEB-AC20770AFF9E" width="0.0" height="0.0">
+        <image name="1EC2F07A-FFC0-4D56-8AD5-5B364866ED16" width="0.0" height="0.0">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOTpYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKwHCBEW
 GxwiIyotMzZVJG51bGzUCQoLDA0ODxBWJGNsYXNzXE5TSW1hZ2VGbGFnc1ZOU1JlcHNXTlNDb2xvcoAL
@@ -593,7 +596,7 @@ xgDIATcBPAFHAVABVgFZAV8BaAFtAXUBeAF/AYcBlAGZAZsBnQGiAaoBrQGyAboBvQHPAdIB1wAAAAAA
 AAIBAAAAAAAAAD0AAAAAAAAAAAAAAAAAAAHZA
 </mutableData>
         </image>
-        <image name="855934BD-BD82-437B-92E0-49B285BCDB86" width="0.0" height="0.0">
+        <image name="35B93B7C-4CDA-4D9B-8507-3BFE5A8E51E8" width="0.0" height="0.0">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOTpYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKwHCBEW
 GxwiIyotMzZVJG51bGzUCQoLDA0ODxBWJGNsYXNzXE5TSW1hZ2VGbGFnc1ZOU1JlcHNXTlNDb2xvcoAL
@@ -608,22 +611,7 @@ AMYAyAE4AT0BSAFRAVcBWgFgAWkBbgF2AXkBgAGIAZUBmgGcAZ4BowGrAa4BswG7Ab4B0AHTAdgAAAAA
 AAACAQAAAAAAAAA9AAAAAAAAAAAAAAAAAAAB2g
 </mutableData>
         </image>
-        <image name="BAAC6E65-3D17-4E79-8921-7B7B51DFCF69" width="0.0" height="0.0">
-            <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGOTpYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKwHCBEW
-GxwiIyotMzZVJG51bGzUCQoLDA0ODxBWJGNsYXNzXE5TSW1hZ2VGbGFnc1ZOU1JlcHNXTlNDb2xvcoAL
-EgTQAACAAoAJ0hIJExVaTlMub2JqZWN0c6EUgAOACNISCRcVohgZgASABYAIEAXTHQkeHyAhV05TLmJh
-c2VbTlMucmVsYXRpdmWAAIAHgAZfEG1maWxlOi8vbG9jYWxob3N0L1VzZXJzL1NoYXJlZC9rcmV2aXMv
-UHJvZHVjdHMvRGlzY2xvc2FibGVWaWV3LmZyYW1ld29yay9SZXNvdXJjZXMvU05EaXNjbG9zdXJlQXJy
-b3dSaWdodC50aWZm0iQlJidaJGNsYXNzbmFtZVgkY2xhc3Nlc1VOU1VSTKIoKVVOU1VSTFhOU09iamVj
-dNIkJSssV05TQXJyYXmiKynTLi8JMDEyV05TV2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AK0iQlNDVX
-TlNDb2xvcqI0KdIkJTc4V05TSW1hZ2WiNylfEA9OU0tleWVkQXJjaGl2ZXLROzxUcm9vdIABAAgAEQAa
-ACMALQAyADcARABKAFMAWgBnAG4AdgB4AH0AfwCBAIYAkQCTAJUAlwCcAJ8AoQCjAKUApwCuALYAwgDE
-AMYAyAE4AT0BSAFRAVcBWgFgAWkBbgF2AXkBgAGIAZUBmgGcAZ4BowGrAa4BswG7Ab4B0AHTAdgAAAAA
-AAACAQAAAAAAAAA9AAAAAAAAAAAAAAAAAAAB2g
-</mutableData>
-        </image>
-        <image name="DE788009-BE7C-434B-AB1C-26CBC8415BAE" width="0.0" height="0.0">
+        <image name="468A7F12-07AC-4234-BC49-A420D9AAAFEA" width="0.0" height="0.0">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOTpYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKwHCBEW
 GxwiIyotMzZVJG51bGzUCQoLDA0ODxBWJGNsYXNzXE5TSW1hZ2VGbGFnc1ZOU1JlcHNXTlNDb2xvcoAL
@@ -636,6 +624,21 @@ U0NvbG9yojQp0iQlNzhXTlNJbWFnZaI3KV8QD05TS2V5ZWRBcmNoaXZlctE7PFRyb290gAEACAARABoA
 IwAtADIANwBEAEoAUwBaAGcAbgB2AHgAfQB/AIEAhgCRAJMAlQCXAJwAnwChAKMApQCnAK4AtgDCAMQA
 xgDIATcBPAFHAVABVgFZAV8BaAFtAXUBeAF/AYcBlAGZAZsBnQGiAaoBrQGyAboBvQHPAdIB1wAAAAAA
 AAIBAAAAAAAAAD0AAAAAAAAAAAAAAAAAAAHZA
+</mutableData>
+        </image>
+        <image name="A7DF67EC-7F3F-45F1-843B-29631615F244" width="0.0" height="0.0">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGOTpYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKwHCBEW
+GxwiIyotMzZVJG51bGzUCQoLDA0ODxBWJGNsYXNzXE5TSW1hZ2VGbGFnc1ZOU1JlcHNXTlNDb2xvcoAL
+EgTQAACAAoAJ0hIJExVaTlMub2JqZWN0c6EUgAOACNISCRcVohgZgASABYAIEAXTHQkeHyAhV05TLmJh
+c2VbTlMucmVsYXRpdmWAAIAHgAZfEG1maWxlOi8vbG9jYWxob3N0L1VzZXJzL1NoYXJlZC9rcmV2aXMv
+UHJvZHVjdHMvRGlzY2xvc2FibGVWaWV3LmZyYW1ld29yay9SZXNvdXJjZXMvU05EaXNjbG9zdXJlQXJy
+b3dSaWdodC50aWZm0iQlJidaJGNsYXNzbmFtZVgkY2xhc3Nlc1VOU1VSTKIoKVVOU1VSTFhOU09iamVj
+dNIkJSssV05TQXJyYXmiKynTLi8JMDEyV05TV2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AK0iQlNDVX
+TlNDb2xvcqI0KdIkJTc4V05TSW1hZ2WiNylfEA9OU0tleWVkQXJjaGl2ZXLROzxUcm9vdIABAAgAEQAa
+ACMALQAyADcARABKAFMAWgBnAG4AdgB4AH0AfwCBAIYAkQCTAJUAlwCcAJ8AoQCjAKUApwCuALYAwgDE
+AMYAyAE4AT0BSAFRAVcBWgFgAWkBbgF2AXkBgAGIAZUBmgGcAZ4BowGrAa4BswG7Ab4B0AHTAdgAAAAA
+AAACAQAAAAAAAAA9AAAAAAAAAAAAAAAAAAAB2g
 </mutableData>
         </image>
     </resources>
